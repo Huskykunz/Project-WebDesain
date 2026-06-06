@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InfoPath — Panduan Jurusan Informatika</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href = "css/style.css"/>
+  </head>
+
+  <body>
+    <!-- ===== NAVIGASI ===== -->
+    <nav>
+      <div class="nav-logo">INFO<span>PATH</span></div>
+
+      <!-- Hamburger Menu-->
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#beranda" onclick="tutupMenu()">Beranda</a></li>
+        <li><a href="#jurusan" onclick="tutupMenu()">Jurusan</a></li>
+        <li><a href="#prospek" onclick="tutupMenu()">Prospek Kerja</a></li>
+        <li><a href="#strategi" onclick="tutupMenu()">Strategi Belajar</a></li>
+        <li><a href="#tips" onclick="tutupMenu()">Tips Masuk</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero" id="beranda">
+      <div class="hero-konten">
+        <span class="hero-tag">Panduan Kuliah Informatika untuk SMA</span>
+        <h1>Raih Masa Depan di Dunia <span>Teknologi</span> Digital</h1>
+        <p>
+          Yuk mengenal jurusan Informatika lebih dalam — mulai dari mata kuliah,
+          prospek karir bergaji tinggi, hingga strategi belajar yang bisa kamu
+          mulai sekarang.
+        </p>
+        <a href="#jurusan" class="hero-cta">Mulai Eksplorasi →</a>
+      </div>
+    </header>
+
+    <div class="garis-aksen"></div>
+
+    <!-- ===== JURUSAN ===== -->
+    <section class="section" id="jurusan">
+      <h2 class="section-title">Kenali Jurusan Informatika</h2>
+      <div class="grid-utama">
+        <div
+          class="kartu-besar"
+          onclick="window.location.href = 'https://example.com'"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80"
+            alt="Mahasiswa coding"
+          />
+          <div class="isi">
+            <span class="label">Jurusan</span>
+            <h2>Apa Itu Teknik Informatika dan Ilmu Komputer?</h2>
+            <p>
+              Jurusan Informatika mempelajari cara merancang, membangun, dan
+              mengoptimalkan sistem perangkat lunak. Kamu akan belajar
+              pemrograman, algoritma, basis data, jaringan komputer, kecerdasan
+              buatan, hingga keamanan siber — semua bekal untuk menjadi engineer
+              kelas dunia.
+            </p>
+            <p class="tgl">Diperbarui Juni 2026 &nbsp;·&nbsp; 10 menit baca</p>
+          </div>
+        </div>
+
+        <div class="kolom-kecil">
+          <div
+            class="kartu-kecil"
+            onclick="window.location.href = 'https://example.com'"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?w=400&q=80"
+              alt="Mahasiswa belajar coding"
+            />
+            <div class="isi">
+              <span class="label">Kurikulum</span>
+              <h3>Mata Kuliah Apa Saja yang Dipelajari?</h3>
+              <p>
+                Mulai dari Kalkulus dan Aljabar Linear, lanjut ke Algoritma,
+                OOP, Machine Learning, hingga Skripsi berbasis riset atau
+                produk.
+              </p>
+              <p class="tgl">Panduan Lengkap</p>
+            </div>
+          </div>
+          <div
+            class="kartu-kecil"
+            onclick="window.location.href = 'https://example.com'"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80"
+              alt="Mahasiswa diskusi"
+            />
+            <div class="isi">
+              <span class="label strategi">Tips</span>
+              <h3>
+                Perbedaan Informatika, Sistem Informasi, dan Teknik Komputer
+              </h3>
+              <p>
+                Kamu bingung mau pilih jurusan TI? Kami udah uraikan perbedaan
+                fokus, peminatan, dan karirnya biar kamu enggak salah pilih.
+              </p>
+              <p class="tgl">Panduan Memilih</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROSPEK KERJA ===== -->
+    <section class="section section-abu" id="prospek">
+      <h2 class="section-title">Prospek Kerja Lulusan Informatika</h2>
+      <p class="prospek-intro">
+        Lulusan Informatika merupakan salah satu yang paling dicari di pasar
+        kerja global. Berikut profesi-profesi populer yang bisa kamu ambil serta
+        kisaran gajinya di Indonesia:
+      </p>
+      <div class="prospek-grid">
+        <div class="prospek-item">
+          <span class="ikon">💻</span>
+          <h3>Software Engineer</h3>
+          <p>
+            Merancang & membangun aplikasi web/mobile untuk perusahaan skala
+            startup hingga korporasi besar.
+          </p>
+          <span class="gaji">Rp 8 – 30 jt/bln</span>
+        </div>
+        <div class="prospek-item">
+          <span class="ikon">🤖</span>
+          <h3>AI / ML Engineer</h3>
+          <p>
+            Membangun model kecerdasan buatan untuk otomasi, rekomendasi, dan
+            analitik data.
+          </p>
+          <span class="gaji">Rp 12 – 40 jt/bln</span>
+        </div>
+        <div class="prospek-item">
+          <span class="ikon">🔐</span>
+          <h3>Cybersecurity Analyst</h3>
+          <p>
+            Melindungi sistem dan data perusahaan dari ancaman siber yang
+            semakin canggih.
+          </p>
+          <span class="gaji">Rp 10 – 35 jt/bln</span>
+        </div>
+        <div class="prospek-item">
+          <span class="ikon">☁️</span>
+          <h3>Cloud Engineer</h3>
+          <p>
+            Mengelola infrastruktur cloud (AWS, GCP, Azure) agar sistem selalu
+            cepat dan andal.
+          </p>
+          <span class="gaji">Rp 10 – 40 jt/bln</span>
+        </div>
+        <div class="prospek-item">
+          <span class="ikon">📊</span>
+          <h3>Data Scientist</h3>
+          <p>
+            Mengolah data besar menjadi insight bisnis yang actionable
+            menggunakan statistik & ML.
+          </p>
+          <span class="gaji">Rp 10 – 35 jt/bln</span>
+        </div>
+        <div class="prospek-item">
+          <span class="ikon">🎮</span>
+          <h3>Game Developer</h3>
+          <p>
+            Menciptakan pengalaman bermain yang imersif menggunakan engine
+            seperti Unity atau Unreal.
+          </p>
+          <span class="gaji">Rp 6 – 25 jt/bln</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BANNER TENGAH ===== -->
+    <div class="banner-tengah">
+      <h2>5 Alasan Informatika adalah Jurusan Masa Depan</h2>
+      <p>
+        Dari pertumbuhan lapangan kerja yang eksponensial, fleksibilitas kerja
+        remote, hingga peluang wirausaha berbasis teknologi — Informatika
+        membuka pintu yang tidak ditawarkan jurusan lain.
+      </p>
+      <a href="#strategi" class="tombol">Lihat Strategi Belajar →</a>
+    </div>
+
+    <!-- ===== STRATEGI BELAJAR ===== -->
+    <section class="section" id="strategi">
+      <h2 class="section-title">Strategi Belajar Sejak di Bangku Sekolah</h2>
+      <p class="strategi-intro">
+        Kamu tidak harus menunggu kuliah untuk mulai. Ini langkah yang bisa kamu
+        lakukan mulai dari sekarang agar kamu bisa selangkah lebih maju saat
+        masuk Informatika.
+      </p>
+      <div class="strategi-list">
+        <div class="strategi-card">
+          <div class="nomor">01</div>
+          <h3>Kuasai Logika & Matematika Dasar</h3>
+          <p>
+            Algoritma dan pemrograman sangat bergantung pada logika berpikir.
+            Kamu harus melatih kemampuan matematika diskrit, logika, dan
+            statistik dasar sejak dini.
+          </p>
+        </div>
+        <div class="strategi-card">
+          <div class="nomor">02</div>
+          <h3>Mulai Belajar Coding Sekarang</h3>
+          <p>
+            Pilih satu bahasa pemrograman (Python sangat direkomendasikan untuk
+            pemula) dan konsistenlah berlatih minimal 30 menit sehari melalui
+            Dicoding, freeCodeCamp, atau CS50.
+          </p>
+        </div>
+        <div class="strategi-card">
+          <div class="nomor">03</div>
+          <h3>Ikuti Olimpiade & Kompetisi</h3>
+          <p>
+            Olimpiade Informatika (OSN/OSTN) adalah batu loncatan terbaik.
+            Selain mengasah kemampuan, prestasinya juga memperkuat portofolio
+            masuk universitas favorit.
+          </p>
+        </div>
+        <div class="strategi-card">
+          <div class="nomor">04</div>
+          <h3>Bangun Proyek Sederhana</h3>
+          <p>
+            Mulai dari buat website, bot Telegram, atau aplikasi-aplikasi kecil.
+            Proyek nyata jauh lebih berkesan karena kita sudah mendapat
+            pengalaman nya.
+          </p>
+        </div>
+        <div class="strategi-card">
+          <div class="nomor">05</div>
+          <h3>Riset Universitas & Jalur Masuk</h3>
+          <p>
+            Pelajari perbedaan SNBT, SNBP, dan Jalur Mandiri. Cari tahu passing
+            grade Jurusan di PTN impianmu dan sesuaikan strategi belajarnya.
+          </p>
+        </div>
+        <div class="strategi-card">
+          <div class="nomor">06</div>
+          <h3>Bergabung dengan Komunitas Tech</h3>
+          <p>
+            Masuk komunitas seperti Komunitas Belajar Python, Discord CS
+            Indonesia, atau GitHub Student untuk memperluas jaringan dan terus
+            termotivasi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIPS MASUK ===== -->
+    <section class="section section-abu" id="tips">
+      <h2 class="section-title">Tips Sukses Masuk Informatika</h2>
+      <p class="tips-teks">
+        Persaingan masuk jurusan Informatika di PTN favorit memang ketat, bukan
+        berarti nggak bisa ditembus. Fokuslah pada penguasaan Matematika dan
+        TIK, tingkatkan nilai Tes Potensi Skolastik (TPS) untuk SNBT, dan mulai
+        bangun portofolio digital sejak kelas 10.
+        <br /><br />
+        Kombinasi nilai akademik yang kuat, sertifikat kompetensi, dan proyek
+        nyata adalah faktor utama yang membuat lamaranmu menonjol di antara
+        ribuan pendaftar setiap tahunnya. InfoPath hadir untuk menemanimu di
+        setiap langkah. Mulai dari mengenal jurusan, memilih universitas, hingga
+        sukses di karir industri teknologi.
+      </p>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>
+        &copy; 2026 <span>InfoPath</span> — Panduan Jurusan Informatika untuk
+        Generasi Digital Indonesia. Dibuat dengan semangat belajar.
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+      
+  </body>
+</html>
