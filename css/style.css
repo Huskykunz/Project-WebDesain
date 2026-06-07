@@ -1,0 +1,715 @@
+/* ===== RESET & BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --biru-gelap: #050a18;
+  --navy: #0b1530;
+  --navy-card: #111f42;
+  --biru: #1a6bff;
+  --biru-mid: #0047cc;
+  --aksen: #3d8bff;
+  --putih: #ffffff;
+  --putih-redup: #c5d3f0;
+  --teks: #ffffff;
+  --teks2: #8faad4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  display: block;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--biru-gelap);
+  color: var(--teks);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.hero,
+.section {
+  scroll-margin-top: 60px;
+}
+
+/* ===== NAVIGASI ===== */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 60px;
+  background: rgba(5, 10, 24, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  border-bottom: 1px solid rgba(26, 107, 255, 0.2);
+}
+
+.nav-logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: var(--putih);
+  z-index: 201;
+}
+.nav-logo span {
+  color: var(--biru);
+}
+
+/* hamburger button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 201;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--putih);
+  border-radius: 2px;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+.nav-toggle.aktif span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.aktif span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.aktif span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem;
+}
+.nav-menu a {
+  color: var(--putih-redup);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-menu a:hover {
+  color: var(--biru);
+}
+.nav-toggle:focus-visible,
+.nav-menu a:focus-visible,
+.hero-cta:focus-visible,
+.tombol:focus-visible,
+.kartu-besar:focus-visible,
+.kartu-kecil:focus-visible,
+.referensi-list a:focus-visible {
+  outline: 3px solid rgba(127, 179, 255, 0.85);
+  outline-offset: 4px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 10, 24, 0.45) 0%,
+      rgba(5, 10, 24, 0.7) 50%,
+      rgba(5, 10, 24, 0.95) 100%
+    ),
+    url("../assets/images/hero-students.jpg") center 30% / cover no-repeat;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 6% 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--biru), transparent);
+}
+
+.hero-konten {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  width: 100%;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(26, 107, 255, 0.18);
+  border: 1px solid rgba(26, 107, 255, 0.5);
+  color: #7fb3ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+}
+.hero-tag::before {
+  content: "</>";
+  font-family: monospace;
+  color: var(--biru);
+  margin-right: 0.2rem;
+}
+
+.hero-konten h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  line-height: 1.05;
+  color: var(--putih);
+  margin-bottom: 0.8rem;
+}
+.hero-konten h1 span {
+  color: var(--biru);
+}
+.hero-konten p {
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  color: var(--putih-redup);
+  max-width: 560px;
+}
+.hero-cta {
+  display: inline-block;
+  margin-top: 1.6rem;
+  background: var(--biru);
+  color: var(--putih);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+.hero-cta:hover {
+  background: var(--aksen);
+  transform: translateY(-2px);
+}
+
+/* ===== GARIS AKSEN ===== */
+.garis-aksen {
+  height: 4px;
+  background: linear-gradient(90deg, var(--navy), var(--biru), var(--aksen));
+}
+
+/* ===== SECTION UMUM ===== */
+.section {
+  padding: 4rem 6%;
+  background: var(--biru-gelap);
+}
+.section-abu {
+  background: #07102a !important;
+} /* lebih gelap dari navy-card agar kartu kontras */
+
+.section-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  letter-spacing: 1px;
+  color: var(--putih);
+  margin-bottom: 2rem;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: var(--biru);
+  border-radius: 2px;
+  margin-top: 0.4rem;
+}
+
+/* ===== GRID ARTIKEL ===== */
+.grid-utama {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.kartu-besar {
+  display: block;
+  background: var(--navy-card);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(26, 107, 255, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.kartu-besar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26, 107, 255, 0.2);
+}
+.kartu-besar img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.kartu-besar .isi {
+  padding: 1.4rem;
+}
+.kartu-besar .isi h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0.7rem;
+  color: var(--putih);
+  line-height: 1.35;
+}
+.kartu-besar .isi p {
+  font-size: 0.87rem;
+  color: var(--teks2);
+}
+
+.kolom-kecil {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kartu-kecil {
+  display: flex;
+  gap: 0;
+  background: var(--navy-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(26, 107, 255, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+  flex: 1;
+}
+.kartu-kecil:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(26, 107, 255, 0.18);
+}
+.kartu-kecil img {
+  width: 110px;
+  min-height: 130px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.kartu-kecil .isi {
+  padding: 1rem;
+}
+.kartu-kecil .isi h3 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin: 0.35rem 0 0.45rem;
+  line-height: 1.3;
+  color: var(--putih);
+}
+.kartu-kecil .isi p {
+  font-size: 0.78rem;
+  color: var(--teks2);
+}
+
+.label {
+  display: inline-block;
+  background: var(--biru);
+  color: var(--putih);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+.label.strategi {
+  background: var(--biru-mid);
+}
+.tgl {
+  font-size: 0.75rem;
+  color: var(--teks2);
+  margin-top: 0.6rem !important;
+}
+
+/* ===== PROSPEK KERJA ===== */
+.prospek-intro {
+  color: var(--teks2);
+  max-width: 620px;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.prospek-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+.prospek-item {
+  background: linear-gradient(160deg, #1a2d5a 0%, #0f1e45 100%);
+  border: 1px solid rgba(61, 139, 255, 0.35);
+  border-radius: 12px;
+  padding: 1.3rem 1rem;
+  text-align: center;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+}
+.prospek-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(61, 139, 255, 0.7);
+  box-shadow: 0 8px 28px rgba(26, 107, 255, 0.25);
+}
+.prospek-item .ikon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.prospek-item h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #e8f0ff;
+  margin-bottom: 0.35rem;
+}
+.prospek-item p {
+  font-size: 0.76rem;
+  color: #a8c0e8;
+  line-height: 1.5;
+}
+.prospek-item .gaji {
+  display: inline-block;
+  margin-top: 0.6rem;
+  background: rgba(26, 107, 255, 0.18);
+  color: #7fb3ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  border: 1px solid rgba(26, 107, 255, 0.35);
+}
+
+/* ===== BANNER TENGAH ===== */
+.banner-tengah {
+  background: linear-gradient(135deg, #020818 0%, #0b1a45 50%, #0d2060 100%);
+  border-top: 1px solid rgba(26, 107, 255, 0.2);
+  border-bottom: 1px solid rgba(26, 107, 255, 0.2);
+  color: var(--putih);
+  text-align: center;
+  padding: 3.5rem 6%;
+}
+.banner-tengah h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  letter-spacing: 1px;
+  margin-bottom: 0.9rem;
+}
+.banner-tengah p {
+  color: var(--putih-redup);
+  max-width: 580px;
+  margin: 0 auto 1.6rem;
+  font-size: 0.94rem;
+}
+.tombol {
+  display: inline-block;
+  background: var(--biru);
+  color: var(--putih);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+  font-size: 0.95rem;
+}
+.tombol:hover {
+  background: var(--aksen);
+  transform: translateY(-2px);
+}
+
+/* ===== STRATEGI BELAJAR ===== */
+.strategi-intro {
+  color: var(--teks2);
+  max-width: 620px;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.strategi-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+.strategi-card {
+  background: var(--navy-card);
+  border-left: 4px solid var(--biru);
+  border-top: 1px solid rgba(26, 107, 255, 0.12);
+  border-right: 1px solid rgba(26, 107, 255, 0.12);
+  border-bottom: 1px solid rgba(26, 107, 255, 0.12);
+  border-radius: 10px;
+  padding: 1.3rem 1.4rem;
+}
+.strategi-card .nomor {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  color: var(--biru);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+.strategi-card h3 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--putih);
+  margin-bottom: 0.45rem;
+}
+.strategi-card p {
+  font-size: 0.82rem;
+  color: var(--teks2);
+  line-height: 1.55;
+}
+
+/* ===== TIPS ===== */
+.tips-teks {
+  max-width: 700px;
+  color: var(--teks2);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ===== REFERENSI ===== */
+.referensi-intro {
+  color: var(--teks2);
+  max-width: 720px;
+  font-size: 0.95rem;
+}
+
+.referensi-list {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 820px;
+  margin-top: 1.4rem;
+  padding-left: 1.2rem;
+  color: var(--teks2);
+}
+
+.referensi-list a {
+  color: #9dc5ff;
+  font-size: 0.92rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(157, 197, 255, 0.35);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.referensi-list a:hover {
+  color: var(--putih);
+  border-color: var(--aksen);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy);
+  border-top: 1px solid rgba(26, 107, 255, 0.2);
+  color: var(--teks2);
+  text-align: center;
+  padding: 1.6rem 5%;
+  font-size: 0.84rem;
+}
+footer span {
+  color: var(--biru);
+  font-weight: 700;
+}
+
+/* ================================================
+    TABLET  ≤ 900px
+================================================ */
+@media (max-width: 900px) {
+  .prospek-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .strategi-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================================================
+    MOBILE  ≤ 640px
+================================================ */
+@media (max-width: 640px) {
+  /* --- NAV MOBILE --- */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    width: 190px;
+    background: rgba(8, 15, 38, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(26, 107, 255, 0.28);
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0.35rem 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease;
+  }
+  .nav-menu.buka {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+  .nav-menu li {
+    width: 100%;
+  }
+  .nav-menu a {
+    display: block;
+    width: 100%;
+    font-size: 0.88rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 6px;
+  }
+  .nav-menu a:hover {
+    background: rgba(26, 107, 255, 0.18);
+    color: var(--putih);
+  }
+
+  /* --- HERO MOBILE --- */
+  .hero {
+    min-height: 100svh;
+    padding: 0 5% 4rem;
+    align-items: flex-end;
+  }
+  .hero-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.8px;
+  }
+  .hero-konten h1 {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+  .hero-konten p {
+    font-size: 0.9rem;
+  }
+  .hero-cta {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem;
+  }
+
+  /* --- SECTION PADDING --- */
+  .section {
+    padding: 3rem 5%;
+  }
+  .banner-tengah {
+    padding: 3rem 5%;
+  }
+
+  /* --- GRID ARTIKEL: 1 kolom --- */
+  .grid-utama {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  /* kartu kecil: gambar lebih kecil di mobile */
+  .kartu-kecil img {
+    width: 90px;
+    min-height: 110px;
+  }
+
+  /* --- PROSPEK: 2 kolom di mobile --- */
+  .prospek-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .prospek-item {
+    padding: 1.1rem 0.8rem;
+  }
+  .prospek-item .ikon {
+    font-size: 1.7rem;
+  }
+  .prospek-item h3 {
+    font-size: 0.82rem;
+  }
+  .prospek-item p {
+    font-size: 0.72rem;
+  }
+
+  /* --- STRATEGI: 1 kolom di mobile --- */
+  .strategi-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* banner tombol full */
+  .tombol {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* ================================================
+    MOBILE XS  ≤ 380px
+================================================ */
+@media (max-width: 380px) {
+  .prospek-grid {
+    grid-template-columns: 1fr;
+  }
+  .kartu-kecil {
+    flex-direction: column;
+  }
+  .kartu-kecil img {
+    width: 100%;
+    height: 140px;
+  }
+  .kartu-kecil .isi {
+    padding: 1rem;
+  }
+}
